@@ -1,13 +1,13 @@
-
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <app-cockpit
+    (serverCreated)="onServerAdded"
+    (blueprintCreated)="onBlueprintAdded"
+  ></app-cockpit>
   <hr />
   <div class="row">
     <div class="col-xs-12">
-      <!-- to use each component properties use [element]="" and pass property name to it -->
       <app-server-element
-
-        [element]="element"
+        [srvElement]="element"
         *ngFor="let element of serverElements"
       ></app-server-element>
     </div>
